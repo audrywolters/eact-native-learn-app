@@ -14,7 +14,7 @@ const SearchScreen = () => {
 const styles = StyleSheet.create({
 	parentView: {
 		backgroundColor: 'white',
-		alignItems: 'flex-start',
+		// alignItems: 'flex-start',
 		flex: 1
 	}
 })
