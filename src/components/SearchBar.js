@@ -12,7 +12,6 @@ const SearchBar = ({ term, onTermChange, onTermSubmit }) => {
 				style={styles.input}
 				placeholder="Search"
 				value={term}
-				// AUDRY - dissect syntax
 				onChangeText={onTermChange}
 				onEndEditing={onTermSubmit}
 			/>
