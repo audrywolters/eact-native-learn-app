@@ -8,6 +8,13 @@ const SearchScreen = () => {
 	const [results, setResults] = useState([])
 	const [errorMessage, setErrorMessage] = useState('')
 
+	// call searchApi when component is first rendered
+	// empty array says 'only run this once, when compnent is rendered'
+	useEffect(() => {
+		searchApi('bip')
+	}, [])
+
+
 	const searchApi = async (searchTerm) => {
 		try {
 			const response = await yelp.get('/search', {
@@ -22,17 +29,6 @@ const SearchScreen = () => {
 			setErrorMessage('Something went wrong')
 		}
 	}
-
-	// call searchApi when component is first rendered
-
-	// BAD CODE - this will get stuck in a loop
-	// cuz api is called by SearchBar
-	//searchApi('bip')
-
-	// empty array says 'only run this once, when compnent is rendered'
-	useEffect(() => {
-		searchApi('bip')
-	}, [])
 
 	return (
 		<View style={styles.parentView}>
