@@ -4,7 +4,7 @@ import yelp from '../api/yelp'
 export default () => {
 	const [results, setResults] = useState([])
 	const [errorMessage, setErrorMessage] = useState('')
-	
+
 	// call to the api - search for restaurants with a short phrase
 	const searchApi = async (searchTerm) => {
 		try {
@@ -26,6 +26,6 @@ export default () => {
 	useEffect(() => {
 		searchApi('italian')
 	}, [])
-	
+
 	return [searchApi, results, errorMessage]
 }

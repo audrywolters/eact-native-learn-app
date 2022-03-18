@@ -4,14 +4,13 @@ import ResultsDetail from './ResultsDetail'
 
 const ResultsList = ({ title, results }) => {
 	return (
-		<View>
+		<View style={styles.container}>
 			<Text style={styles.title}>{title}</Text>
-			<Text>Results: {results.length}</Text>
-			<FlatList 
+			<FlatList
 				horizontal
 				data={results}
 				keyExtractor={(result) => result.id}
-				renderItem={({item}) => {
+				renderItem={({ item }) => {
 					return <ResultsDetail result={item} />
 				}}
 			/>
@@ -20,7 +19,12 @@ const ResultsList = ({ title, results }) => {
 }
 
 const styles = StyleSheet.create({
+	container: {
+		marginBottom: 10
+	},
 	title: {
+		marginLeft: 15,
+		marginBottom: 5,
 		fontSize: 18,
 		fontWeight: 'bold'
 	}

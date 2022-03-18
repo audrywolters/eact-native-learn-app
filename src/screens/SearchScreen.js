@@ -11,7 +11,7 @@ const SearchScreen = () => {
 	filterResultsByPrice = (price) => {
 		// price === '$' || '$$' || '$$$'
 
-		return results.filter(result => {
+		return results.filter((result) => {
 			return result.price === price
 		})
 	}
