@@ -24,7 +24,9 @@ export default () => {
 	// call searchApi once on load (for some data to display when loaded)
 	// empty array says 'only run this once, when rendered'
 	useEffect(() => {
-		searchApi('italian')
+		// 'black' give a gooder variety in price category
+		// for my testing wants only
+		searchApi('black')
 	}, [])
 
 	return [searchApi, results, errorMessage]
