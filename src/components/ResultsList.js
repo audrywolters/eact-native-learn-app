@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, FlatList } from 'react-native'
 import ResultsDetail from './ResultsDetail'
 
 const ResultsList = ({ title, results }) => {
+	// UI JSX
 	return (
 		<View style={styles.container}>
 			<Text style={styles.title}>{title}</Text>
