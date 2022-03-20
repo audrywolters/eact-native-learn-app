@@ -4,7 +4,7 @@ import SearchBar from '../components/SearchBar'
 import ResultsList from '../components/ResultsList'
 import useResults from '../hooks/useResults'
 
-const SearchScreen = () => {
+const SearchScreen = ({ navigation }) => {
 	const [term, setTerm] = useState('')
 	const [searchApi, results, errorMessage] = useResults()
 
@@ -31,9 +31,21 @@ const SearchScreen = () => {
 
 			{/* components that display restaurant info */}
 			<ScrollView>
-				<ResultsList results={filterResultsByPrice('$')}   title="Cost Effective" />
-				<ResultsList results={filterResultsByPrice('$$')}  title="Bit Pricier" />
-				<ResultsList results={filterResultsByPrice('$$$')} title="Big Spender" />
+				<ResultsList
+					navigation={navigation}
+					results={filterResultsByPrice('$')}
+					title="Cost Effective"
+				/>
+				<ResultsList
+					navigation={navigation}
+					results={filterResultsByPrice('$$')}
+					title="Bit Pricier"
+				/>
+				<ResultsList
+					navigation={navigation}
+					results={filterResultsByPrice('$$$')}
+					title="Big Spender"
+				/>
 			</ScrollView>
 		</>
 	)
@@ -43,7 +55,6 @@ const styles = StyleSheet.create({
 	// not using this for now
 	// i will when i find out how to target most parent element
 	// or at least how to change BG color
-
 	// parentView: {
 	// 	backgroundColor: 'white',
 	// 	// for web - flex: 1
